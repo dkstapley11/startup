@@ -20,4 +20,4 @@ git push
 Learned about a lot of different things pertaining to AWS. Launched my own instance from the AWS site/console 
 Ran a couple given commands to launch a remote shell console for the site. 
 Command to launch remote terminal: ssh -i ~/tha_key.ssh/tha_key.pem ubuntu@3.86.179.239
-Elastic IP address: 3.86.179.239
+Elastic IP address: 44.221.223.106
