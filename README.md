@@ -25,3 +25,6 @@ Every time a user starts or ends a round, the leaderboard will update. Each user
 - **CSS** - Professional-looking styling to ensure that the site is playable and reachable on all screen sizes.
 - **JavaScript** - Will provide the meat of the grid game. Panels will be interactive, like buttons.
 - **React** - Application ported to use the React web framework.
+
+
+# HTMl deliverable
