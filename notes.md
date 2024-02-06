@@ -10,7 +10,6 @@ git pull
 git push
     changes other cloned respository to have the same changes
 
-tha_key = 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
 
 
 ### Notes from startup day
