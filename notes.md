@@ -10,6 +10,8 @@ git pull
 git push
     changes other cloned respository to have the same changes
 
+tha_key = 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
+
 
 ### Notes from startup day
  see the README file under this folder to get a summary of the technologies we will be focusing on with the startup application. 
