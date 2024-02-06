@@ -34,7 +34,7 @@ Every time a user starts or ends a round, the leaderboard will update. Each user
 - **HTML pages** - Included index, about, play, leaderboard (and links between them in every header)
 - **HTML code** - Wrote solid html code to be the skeleton of my game
 - **textual content** - included a how-to-play in the about page, other text as necessary
-- **Placeholder for 3rd party service calls** - Included a global leaderboard that will automatically update
+- **Placeholder for 3rd party service calls//Application images** - Included images found online that I pulled into my about page (the icons for the game)
 - **Login** - Login placeholder on index page
 - **Database Data** - Leaderboard page and current points (your account will save your accumulated point count)
 - **Websocket data** - realtime communication goes in the leaderboard page and the play.html shows the live "top 3" podium
