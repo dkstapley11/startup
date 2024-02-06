@@ -22,3 +22,9 @@ Learned about a lot of different things pertaining to AWS. Launched my own insta
 Ran a couple given commands to launch a remote shell console for the site. 
 Command to launch remote terminal: ssh -i ~/tha_key.ssh/tha_key.pem ubuntu@3.86.179.239
 Elastic IP address: 44.221.223.106
+
+
+### Notes from doing the html deliverable
+in order to get your thing to deploy to your domain you have to run the deploy files file (will look like deployFiles.sh)
+- The command to do it is: ./deployFiles.sh -k <yourpemkey> -h <yourdomain> -s startup
+- that last "startup" is where you want these files to be. So like deploying simon to my page with that command make simon show up at simon.landminegame.com
