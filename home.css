@@ -35,3 +35,17 @@ nav menu li a {
     text-decoration: none;
     color: white;
 }
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+}
