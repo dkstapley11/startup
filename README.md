@@ -38,3 +38,13 @@ Every time a user starts or ends a round, the leaderboard will update. Each user
 - **Login** - Login placeholder on index page
 - **Database Data** - Leaderboard page and current points (your account will save your accumulated point count)
 - **Websocket data** - realtime communication goes in the leaderboard page and the play.html shows the live "top 3" podium
+
+
+# CSS deliverable
+### Criteria and how they're met
+- **Header, Footer, Main Content** - Styled the same on each page. Simplistic blue look at the top
+- **Navigation elements** - Simplistic/Minimal center-aligned navigation links under the header!
+- **Responsive to window resizing** - tested on multiple devices, all necessary elements have a "display: flex;" that responsds well to different screen sizes
+- **Application Elements** - All necessary startup elements are included and styled
+- **Text Content** - All text properly formatted and decorated
+- **Application images** - Included on blue background on-theme in the about page
