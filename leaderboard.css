@@ -7,7 +7,6 @@ body {
 
 h1, h2, h3, p {
     color: #333;
-    padding: 10px;
 }
 
 header {
@@ -43,6 +42,8 @@ nav menu li a {
 
 .points {
     text-align: right;
+    margin-left: 10px;
+    flex-shrink: 0;
 }
 
 .players li {
@@ -54,7 +55,18 @@ nav menu li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    counter-increment: list-counter;
 }
+
+.name {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.players li::before {
+    content: counter(list-counter) ". "; /* Display the counter */
+    margin-right: 10px; /* Adjust spacing as needed */
+  }
 
 footer {
     background-color: #007bff;
