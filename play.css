@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1, h2, h3, p {
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+nav menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.game table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.game button {
+    width: 100px;
+    height: 100px;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.players {
+    background-color: #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+}
+
+.player-name {
+    font-weight: bold;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+}
+
+button, input[type="text"] {
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+}
