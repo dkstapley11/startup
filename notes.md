@@ -55,3 +55,84 @@ in order to get your thing to deploy to your domain you have to run the deploy f
 - [ ] byu.edu — root domain
 - [ ] edu — top domain
 - [ ] flex column — children are rows within that column — flex direction column-reverse just flips everything upside down, so two divs with hello and world with those styles would have world hello on two separate lines
+
+## Own Notes -- Going through every module and writing anything and everything
+# HTTPS
+- HTTPS uses TLS protocol to secure connections -- negotiates a shared secret and then uses it to encrypt connections
+- Caddy uses Let's Encrypt to generate secure certificates
+- You don't often manually make changes to your server/caddyfile, but to shell into your server, use this command => ssh -i [key pair file] ubuntu@[yourdomainnamehere]
+- to edit caddyfile -- use command => vi caddyfile -- to exit => :wq and then sudo service caddy restart
+- We edited it to route requests using port 443 (HTTPS) instead of port 80. Initially, it had :80 instead of a domain name outside the french braces. Not having :80 there makes 443 the default
+startup.landminegame.com {
+   root * /usr/share/caddy
+   file_server
+   header Cache-Control no-store
+   header -etag
+   header -server
+}
+
+# HTML stuff -- mostly taken from the curriculum .md, it's already nicely formatted :]
+
+# Form element stuff
+
+| Element    | Meaning                          | Example                                        |
+| ---------- | -------------------------------- | ---------------------------------------------- |
+| `form`     | Input container and submission   | `<form action="form.html" method="post">`      |
+| `fieldset` | Labeled input grouping           | `<fieldset> ... </fieldset>`                   |
+| `input`    | Multiple types of user input     | `<input type="" />`                            |
+| `select`   | Selection dropdown               | `<select><option>1</option></select>`          |
+| `optgroup` | Grouped selection dropdown       | `<optgroup><option>1</option></optgroup>`      |
+| `option`   | Selection option                 | `<option selected>option2</option>`            |
+| `textarea` | Multiline text input             | `<textarea></textarea>`                        |
+| `label`    | Individual input label           | `<label for="range">Range: </label>`           |
+| `output`   | Output of input                  | `<output for="range">0</output>`               |
+| `meter`    | Display value with a known range | `<meter min="0" max="100" value="50"></meter>` |
+
+
+The main purpose of the `form` element is to submit the values of the inputs it contains. Before JavaScript was introduced the `form` container element was essential because it was the only way for the browser to send the input data to a web server as part of a request to process the input and generate a new web page displaying the result of the input. With JavaScript we have much more control over input data and what is done with it. For example, in a single page application the JavaScript will dynamically rebuild the HTML elements to reflect the results of the user interaction. With this ability the data may not even be sent to the server. This greatly reduces the necessity of the `form` element, but it is often still used simply as a container. Just remember that you are not required to have a form element to use input elements.
+
+Here is an example of a simple form that submits the value of a `textarea` element.
+
+```html
+<form action="submission.html" method="post">
+  <label for="ta">TextArea: </label>
+  <textarea id="ta" name="ta-id">
+Some text
+  </textarea>
+  <button type="submit">Submit</button>
+</form>
+```
+# Input element
+
+The input element represents many different input types. You set the type of input with the `type` attribute. There are several different types to choose from. This includes different flavors of textual, numeric, date, and color inputs.
+
+| Type           | Meaning                           |
+| -------------- | --------------------------------- |
+| text           | Single line textual value         |
+| password       | Obscured password                 |
+| email          | Email address                     |
+| tel            | Telephone number                  |
+| url            | URL address                       |
+| number         | Numerical value                   |
+| checkbox       | Inclusive selection               |
+| radio          | Exclusive selection               |
+| range          | Range limited number              |
+| date           | Year, month, day                  |
+| datetime-local | Date and time                     |
+| month          | Year, month                       |
+| week           | Week of year                      |
+| color          | Color                             |
+| file           | Local file                        |
+| submit         | button to trigger form submission |
+
+# HTMl media
+- **Images**
+ ```html
+<img alt="mountain landscape" src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg" />
+```
+- **Video**
+```html
+<video controls width="300" crossorigin="anonymous">
+  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+</video>
+```
