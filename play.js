@@ -30,14 +30,20 @@ function initializeGame() {
     });
 }
 
-// for if I want to use the simon JS to generate random stuff
 setInterval(() => {
     const score = Math.floor(Math.random() * 3000);
-    const chatText = document.querySelector('#player-messages');
-    chatText.innerHTML =
-      `<div class="event"><span class="player-event">Eich</span> scored ${score}</div>` +
-      chatText.innerHTML;
-  }, 5000);
+    const playerName = `Player${Math.floor(Math.random() * 100)}`;
+    const playerMessage = document.createElement('div');
+    playerMessage.classList.add('event');
+    playerMessage.innerHTML = `<span class="player-event">${playerName}</span> scored ${score}`;
+    
+    const chatText = document.getElementById('player-messages');
+    chatText.insertBefore(playerMessage, chatText.firstChild);
+    
+    if (chatText.childElementCount > 10) {
+        chatText.removeChild(chatText.lastChild);
+    }
+}, 5000);
 
 
 // Event listener for buttons
@@ -53,7 +59,7 @@ buttons.forEach(button => {
     });
 });
 
-// Define the game state
+
 let gameState = {
     totalPoints: 100, // Starting total points, adjust as needed
     score: 0,
