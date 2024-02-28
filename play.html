@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="play.js"></script>
     <title>Play</title>
     <link rel="stylesheet" href="play.css" />
 </head>
@@ -27,7 +26,7 @@
             <h1>Let's Play!</h1>
             <div class="players">
                 Current Player:
-                <span class="player-name">Player 1</span>
+                <span class="player-name"></span>
             </div>
             <p>Live Leaderboard:</p>
             <div>
@@ -38,9 +37,12 @@
                 </ol>
             </div>
             <p class="status" style="text-align: center;">
-                <span>Total Points = 0 </span><span>Score = 0</span><span>Status = GAME OVER</span></p>
+                <span class="total-points">Total Points = 100</span>
+                <span class="current-score">Score = 0</span>
+                <span class="game-status">Status = GAME OVER</span>
+            </p>
         </header>
-        <button>Bank Points</button>
+        <button id="bankPointsButton">Bank Points</button>
         <form id="gambleForm" onsubmit="initializeGame(); return false;">
             <input type="number" id="gamble" placeholder="Points To Gamble">
             <input type="submit" value="Start Game">
@@ -95,5 +97,6 @@
             <a href="https://github.com/dkstapley11/startup.git">My GitHub</a>
         </footer>
     </main>
+    <script src="play.js"></script>
 </body>
 </html>
