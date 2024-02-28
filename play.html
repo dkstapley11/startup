@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="play.js"></script>
     <title>Play</title>
     <link rel="stylesheet" href="play.css" />
 </head>
@@ -40,7 +41,10 @@
                 <span>Total Points = 0 </span><span>Score = 0</span><span>Status = GAME OVER</span></p>
         </header>
         <button>Bank Points</button>
-        <input type="text" id="gamble" placeholder="Points To Gamble">
+        <form id="gambleForm" onsubmit="initializeGame(); return false;">
+            <input type="number" id="gamble" placeholder="Points To Gamble">
+            <input type="submit" value="Start Game">
+        </form>
         <br />
         <hr />
         <style></style>

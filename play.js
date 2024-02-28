@@ -15,7 +15,9 @@ function initializeGame() {
     const indices = Array(buttons.length).fill().map((_, index) => index);
     const shuffledIndices = shuffle(indices);
     const bombIndices = shuffledIndices.slice(0, BOMB_COUNT);
-
+    var points = document.getElementById('gamble').value;
+    // Make sure to validate the input points
+    console.log("Game initialized with " + points + " points to gamble.");
     buttons.forEach((button, index) => {
         if (bombIndices.includes(index)) {
             button.dataset.type = 'bomb';

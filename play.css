@@ -94,6 +94,12 @@ footer a {
     color: white;
 }
 
+input {
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px;
+}
+
 button, input[type="text"] {
     font-size: 16px;
     padding: 10px;
