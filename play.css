@@ -109,3 +109,36 @@ button, input[type="text"] {
 input[type="text"] {
     width: calc(100% - 22px);
 }
+
+.game-container {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 600px;
+}
+
+.sidebar {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px; /* Adjust as necessary */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#player-messages {
+    color: blueviolet;
+    opacity: 0.7;
+    height: 300px; /* Adjust as necessary */
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .game-container,
+    .sidebar {
+        display: block;
+        width: 100%;
+    }
+}
