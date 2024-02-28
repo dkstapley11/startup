@@ -48,13 +48,16 @@ nav menu li a {
 .game button {
     width: 100px;
     height: 100px;
-    font-size: 18px;
     margin: 5px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    padding: 20px;
+    background-color: #f0f0f0; /* Match the button background with the body background */
+}
+
+.game button img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .players {
