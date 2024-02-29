@@ -52,7 +52,7 @@ nav menu li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0; /* Match the button background with the body background */
+    background-color: #f0f0f0;
 }
 
 .game button img {
@@ -110,24 +110,36 @@ input[type="text"] {
     width: calc(100% - 22px);
 }
 
-.game-container {
-    display: inline-block;
-    vertical-align: top;
-    max-width: 600px;
+.content-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: flex-start;
 }
 
 .sidebar {
-    display: inline-block;
-    vertical-align: top;
-    width: 200px; /* Adjust as necessary */
+    width: 200px;
     padding: 10px;
     box-sizing: border-box;
+    padding-top: 0;
+}
+
+.game-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 #player-messages {
     color: blueviolet;
     opacity: 0.7;
-    height: 300px; /* Adjust as necessary */
+    height: 300px;
     overflow-y: auto;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -136,9 +148,13 @@ input[type="text"] {
 }
 
 @media (max-width: 768px) {
-    .game-container,
-    .sidebar {
-        display: block;
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar,
+    .game-container {
         width: 100%;
+        align-items: stretch;
     }
 }
