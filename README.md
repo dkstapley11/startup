@@ -48,3 +48,11 @@ Every time a user starts or ends a round, the leaderboard will update. Each user
 - **Application Elements** - All necessary startup elements are included and styled
 - **Text Content** - All text properly formatted and decorated
 - **Application images** - Included on blue background on-theme in the about page
+
+# JS deliverable
+### Criteria and how they're met
+- **Simon JS deployed** - done.
+- **JS support for login** - included on homepage
+- **JS support for database data** - leaderboard updates randomly and sorts by score. everything is ready to fetch data
+- **JS Websocket Support** - player activity is displayed as events occur (adjacent to the game portion on the play page)
+- **JS interactivity** - my game works!
