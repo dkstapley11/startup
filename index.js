@@ -37,6 +37,15 @@ app.listen(port, () => {
 // updateScores considers a new score for inclusion in the high scores.
 // The high scores are saved in memory and disappear whenever the service is restarted.
 let scores = [];
+let recentGames = []; // New array to track the most recent games
+
+function addRecentGame(newGame) {
+  recentGames.unshift(newGame); // Add the new game to the beginning of the array
+  if (recentGames.length > 10) {
+    recentGames.length = 10; // Keep only the 10 most recent games
+  }
+}
+
 function updateScores(newScore, scores) {
   let found = false;
   for (const [i, prevScore] of scores.entries()) {

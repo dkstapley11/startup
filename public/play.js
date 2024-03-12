@@ -30,6 +30,14 @@ function initializeGame() {
     });
 }
 
+fetch('/api/recentGames')
+  .then(response => response.json())
+  .then(recentGames => {
+    setInterval();
+    console.log(recentGames);
+  })
+  .catch(error => console.error('Error fetching recent games:', error));
+
 setInterval(() => {
     const score = Math.floor(Math.random() * 3000);
     const playerName = `Player${Math.floor(Math.random() * 100)}`;

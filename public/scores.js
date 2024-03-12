@@ -21,3 +21,23 @@ setInterval(() => {
         leaderboard.appendChild(playerEntry);
     });
 }, 5000);
+
+
+function submitScore(newScore) {
+    fetch('/api/score', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newScore),
+    })
+    .then(response => response.json())
+    .then(updatedScores => {
+      // Process the updated list of scores, e.g., refresh the scores displayed in your frontend
+      console.log(updatedScores);
+    })
+    .catch(error => console.error('Error submitting score:', error));
+  }
+  
+  // Example usage:
+  submitScore({ score: 5000, name: 'Player1' });
