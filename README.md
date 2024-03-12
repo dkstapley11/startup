@@ -66,10 +66,10 @@ Every time a user starts or ends a round, the leaderboard will update. Each user
 - Backend web service support and interaction
  - Create an HTTP service using Node.js and Express ✅
    - Created index.js file, initialized express web service. 
- - Frontend served up using Express static middleware
+ - Frontend served up using Express static middleware ✅
    - Used Express built-in static middleware to load up front-end code.
- - Your frontend calls third party service endpoints
+ - Your frontend calls third party service endpoints ✅
    - Load a random quote on `about.html` using the same API as Simon
- - Your backend provides service endpoints
-   - Endpoints (/score, /scores, /newgame)
-  - 20% - Your frontend calls your service endpoints
+ - Your backend provides service endpoints ✅
+   - Endpoints (/score, /scores, /recentGames)
+ - Your frontend calls your service endpoints ✅
