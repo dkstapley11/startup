@@ -512,4 +512,11 @@ console.log(await cow());
 ```
 
 
-## Startup Service:
+## SOP and CORS:
+- **SOP** - "Same Origin Policy". SOP only allows JavaScript to make requests to a domain if it is the same domain the user is currently viewing
+  - For example, requests from `byu.iinstructure.com` for service endpoints made to `byu.instructure.com` would fail because the domains do not match
+- **CORS** - "Cross Origin Resource Sharing". 
+  - to call endpoints from other services, you need to make sure they allow access
+
+## Uploading files
+- 
