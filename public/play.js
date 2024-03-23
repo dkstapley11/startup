@@ -30,12 +30,29 @@ function initializeGame() {
     });
 }
 
-fetch('/api/recentGames')
-  .then(response => response.json())
-  .then(recentGames => {
-    setInterval();;
-  })
-  .catch(error => console.error('Error fetching recent games:', error));
+function fetchRecentGames() {
+    fetch('/api/recentGames')
+      .then(response => response.json())
+      .then(recentGames => {
+        console.log(recentGames); // Temporarily log to see the structure
+      })
+      .catch(error => console.error('Error fetching recent games:', error));
+  }
+
+  function saveScore(score) {
+    fetch('/api/score', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(score),
+    })
+      .then(response => response.json())
+      .then(updatedScores => {
+        // Optionally, update UI based on the response
+      })
+      .catch(error => console.error('Error saving score:', error));
+  }
 
 setInterval(() => {
     const score = Math.floor(Math.random() * 3000);
@@ -96,7 +113,7 @@ function startGame() {
     }
 
     updateUI();
-    initializeGame(); // Call your existing function to set up the game
+    initializeGame();
 }
 
 // Function to handle a button click
@@ -110,6 +127,7 @@ function handleButtonClick(button) {
         button.innerHTML = '<img src="https://media.istockphoto.com/id/1139873743/vector/bomb-icon-vector-illustration-flat-design-style-vector-bomb-icon-illustration-isolated-on.jpg?s=612x612&w=0&k=20&c=1PkzhcIDlqWQ-ALpCryGV2Y35wvLCSCoJozCQP2fsqg=" class="icon">';
         gameState.score = 0;
         gameState.gameActive = false;
+        saveScore(gameState.score);
     } else {
         button.innerHTML = '<img src="https://media.istockphoto.com/id/1183998014/vector/treasure-the-treasure-in-the-chest-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=ptqmLnZrnGR-AJRuMV6OdwgaIq0Y6jXG_2OPYOGvOu8=" class="icon">';
         gameState.score *= 2;
@@ -122,6 +140,7 @@ function handleButtonClick(button) {
 function bankPoints() {
     if (gameState.gameActive) {
         gameState.totalPoints += gameState.score;
+        saveScore(gameState.score);
         gameState.score = 0;
         gameState.gameActive = false;
         updateUI();

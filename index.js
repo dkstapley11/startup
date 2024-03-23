@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
+connectDB().catch(err => console.log(err));
+
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -20,9 +23,30 @@ apiRouter.get('/scores', (_req, res) => {
 });
 
 // SubmitScore
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
-  res.send(scores);
+apiRouter.post('/score', async (req, res) => {
+  try {
+      const { getScoresCollection } = require('./database.js');
+      const scoresCollection = getScoresCollection();
+      const score = req.body;
+      
+      await scoresCollection.insertOne(score);
+      res.status(201).send(score);
+  } catch (error) {
+      res.status(500).send(error.message);
+  }
+});
+
+
+apiRouter.get('/recentGames', async (_req, res) => {
+  try {
+      const { getScoresCollection } = require('./database.js');
+      const scoresCollection = getScoresCollection();
+      
+      const recentScores = await scoresCollection.find({}).sort({ _id: -1 }).limit(10).toArray();
+      res.json(recentScores);
+  } catch (error) {
+      res.status(500).send(error.message);
+  }
 });
 
 apiRouter.post('/recentGame', (req, res) => {
