@@ -33,8 +33,7 @@ function initializeGame() {
 fetch('/api/recentGames')
   .then(response => response.json())
   .then(recentGames => {
-    setInterval();
-    console.log(recentGames);
+    setInterval();;
   })
   .catch(error => console.error('Error fetching recent games:', error));
 
